@@ -5,6 +5,8 @@
     --bg-clr: rgb(243, 243, 243);
     --bx-shw: 0px 1px 5px rgb(221, 221, 221);
     --bttm-brdr:1px solid rgb(241, 241, 241);
+    --clr-neutral-900: #171717;
+    --clr-purple-900: #59168b;
 }
 *{
     font-family: "Inter Tight", serif;
@@ -24,6 +26,27 @@ body{
     padding:24px 0;
     height: 100vh;
 }
+nav{
+    width: 400px;
+}
+#backBtn{
+    padding: 4px 8px 4px 4px;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: var(--clr-neutral-900) ;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+#backBtn #backIcon{
+    height: 20px;
+}
+
 .taskWrapper{
     width: 400px;
     min-height: 250px ;
@@ -231,3 +254,12 @@ input[type="text"]:focus{
     margin-top: -4px;
 }
 
+
+#footer{
+    text-align: center;
+    margin-top: 12rem;
+}
+#footer span{
+    color: var(--clr-purple-900);
+    font-weight:500;
+}
