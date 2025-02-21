@@ -1,5 +1,5 @@
 
-
+lucide.createIcons();
 const form = document.querySelector('form');
 const displayResult = document.getElementById('result');
 const checkText = document.getElementById('checkText');
