@@ -15,6 +15,11 @@ export const projects = [
         name: "Pokemon Search",
         link: "/src/pages/pokemon/index.html",
         icon: "bug",
+    },{
+        id:4,
+        name: "Roman Numeral Converter",
+        link: "/src/pages/roman-numeral-converter/index.html",
+        icon: "hash",
     },
     
 
