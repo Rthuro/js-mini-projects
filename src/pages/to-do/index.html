@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>To-do List</title>
+</head>
+<body>         
+    <div class="taskWrapper">
+        <div class="top" >
+            <p style="font-weight: 600;">To-do List</p>
+            <button id="addToDo" class="btn">
+                <i data-lucide="plus"  class="lucideIcon"></i>
+            </button>
+            <div class="addToDoWrapper">
+                <div class="addToDoForm">
+                    <div class="top">
+                        <p style="font-weight: 600;">Add task</p>
+                        <button id="closeBtn" class="btn">
+                            <i data-lucide="x" class="lucideIcon"></i>
+                        </button>
+                    </div>
+                    <form action="" >
+                        <input type="text" name="task" id="taskName" placeholder="Name">
+                        <button type="button" id="setTimeBtn">
+                            Set time
+                            <div>   
+                            <i data-lucide="chevron-down" class="lucideIcon"></i>
+                            </div>
+                        </button>
+                        <div class="timeWrapper">
+                            <p>Set both start time and end time.</p>
+                            <div>
+                                <div>
+                                    <label for="startTime">Start time:</label>
+                                    <input type="time" name="" id="startTime">
+                                </div>
+                                <div>
+                                    <label for="endTime">End time:</label>
+                                    <input type="time" name="" id="endTime">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Add Task" id="formBtn">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <ul id="todo" >
+            <!-- to-do lists -->
+        </ul>
+    </div>
+   
+</body>
+<script src="script.js"></script>
+</html>
