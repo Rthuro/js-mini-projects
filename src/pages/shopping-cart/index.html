@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/src/output.css">
+</head>
+<body class="bg-zinc-100 flex flex-col items-center justify-around py-12">
+    <nav class=" self-start w-[1000px] px-12 mx-auto">
+        <a href="/index.html" class="py-1 pl-1 pr-2 w-fit text-sm rounded bg-neutral-900 text-white flex items-center justify-center ">
+            <i data-lucide="chevron-left" class="h-5"></i>
+           Back home
+        </a>
+    </nav> 
+    <header>
+        <h1 class="text-2xl my-3">Desserts Page</h1>
+    </header>
+      <main>
+        <button id="cart-btn" type="button" class=" cursor-pointer my-3 bg-blue-600  py-1 px-4 rounded-sm text-xs text-white">
+            <span id="show-hide-cart">Show</span> Cart
+          </button>
+        <div id="cart-container" class="hidden my-2 p-3 maxWidth bg-white border-2 border-dashed border-gray-300 ">
+          <button class="cursor-pointer bg-blue-600  py-1 px-4 rounded-sm text-xs text-white mb-2" id="clear-cart-btn">Clear Cart</button>
+          <div id="products-container" class="py-2"></div>
+          <p class="text-xs text-gray-600">Total number of items: <span id="total-items">0</span></p>
+          <p class="text-xs text-gray-600">Subtotal: <span id="subtotal">$0</span></p>
+          <p class="text-xs text-gray-600">Taxes: <span id="taxes">$0</span></p>
+          <p class="text-xs text-gray-600">Total: <span id="total">$0</span></p>
+        </div>
+        <div id="dessert-card-container" class="grid grid-cols-3 space-x-2 space-y-2"></div>
+      </main>
+    
+    <div id="toast" class="hidden fixed right-5 bottom-5 items-center w-full max-w-xs p-4 bg-white shadow-md border-b-2  border-blue-400 animate-popUp" role="alert">
+            <i data-lucide="check-check" stroke="#155dfc"></i>
+            <div class="text-sm font-normal ml-2">
+            Added new dessert.
+            </div>
+            <div class="flex items-center ms-auto space-x-2 rtl:space-x-reverse">
+                <button id="toast-undo" type="button" class="ms-auto cursor-pointer -mx-1.5 -my-1.5 bg-white  hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 ">
+                    <span class="sr-only">Close</span>
+                    <i data-lucide="x" stroke="#6a7282"></i>
+                </button>
+            </div>
+    </div>
+    <p class=" text-center mt-[12rem]">Made by <span class="text-purple-900 font-medium">Rthuro</span></p>
+</body>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="./script.js"></script>
+</html>

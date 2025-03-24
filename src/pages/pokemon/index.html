@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Search</title>
+    <link rel="stylesheet" href="/src/output.css">
+</head>
+<body class="bg-zinc-100 flex flex-col items-center justify-around h-fit py-12">
+    <nav class=" self-start w-[800px] px-12 mx-auto">
+        <a href="/index.html" class="py-1 pl-1 pr-2 w-fit text-sm rounded bg-neutral-900 text-white flex items-center justify-center ">
+            <i data-lucide="chevron-left" class="h-5"></i>
+           Back home
+        </a>
+    </nav> 
+    <section class="flex flex-col items-center justify-center gap-2">
+        <h1 class="text-2xl">Pokemon Search</h1>
+        <div class="flex items-center justify-center gap-2 my-3">
+            <input type="text" id="search-input" class="shadow-sm py-1 px-2 rounded-sm border border-gray-300">
+            <button id="search-button" class=" py-1 px-2 text-white bg-black rounded-sm">Search</button>
+        </div>
+        <p id="err" class="text-red-500 text-center text-sm"></p>
+        <p id="pokemon-name" class="text-lg font-bold"></p>
+        <p id="pokemon-id"></p>
+        <img src="" alt="" id="sprite">
+        <p id="displayData"></p>
+    </section>
+    
+    <p class=" text-center mt-[12rem]">Made by <span class="text-purple-900 font-medium">Rthuro</span></p>
+</body>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script >
+    const searchBtn = document.getElementById('search-button');
+    const err = document.getElementById('err');
+    const displayData = document.getElementById('displayData');
+    const pokemonName = document.getElementById('pokemon-name');
+    const pokemonId = document.getElementById('pokemon-id');
+    const searchInput = document.getElementById('search-input');
+    const sprite = document.getElementById('sprite');
+
+    function display(data){
+        const {name, id, sprites} = data;
+        pokemonName.textContent = name;
+        pokemonId.textContent = `ID: ${id}`;
+        sprite.src = sprites.front_default;
+    }
+    const fetchData = async ()=>{
+        try{
+            
+            const apiURL =  `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchInput.value.toLowerCase()}`;
+            const res = await fetch(apiURL)
+            const data = await res.json();
+            // console.log(data);
+            display(data)
+
+        }catch(e){
+            err.textContent = e;
+        }
+    }
+    
+    searchBtn.addEventListener('click',fetchData)
+
+
+</script>
+</html>
